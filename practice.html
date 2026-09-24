@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* The Modal (background) */
+        .modal .modal1 {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 40%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content .modal-content1 {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .close .close1 {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .close:hover1,
+        .close:focus1 {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+
+        }
+
+        .row {
+            display: flex;
+            gap: 20pxx;
+
+        }
+
+        .open-button,
+        .open-button1 {
+            background-color: #555;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            width: 280px;
+            height: 10%;
+            margin-top: 9%;
+            top: 0;
+        }
+
+        /* The popup form - hidden by default */
+        .form-popup,
+        .form-popup1 {
+            display: none;
+            width: 70%;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+            height: 40%;
+            margin-top: 10%;
+        }
+
+        /* Add styles to the form container */
+        .form-container,
+        .form-container1 {
+            max-width: 300px;
+            padding: 10px;
+            background-color: white;
+            margin-top: 10%;
+
+        }
+
+        /* Full-width input fields */
+        .form-container input[type=text],
+        .form-container input[type=password],
+        .form-container1 input[type=text],
+        .form-container1 input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        /* When the inputs get focus, do something */
+        .form-container input[type=text]:focus,
+        .form-container input[type=password]:focus,
+        .form-container1 input[type=text]:focus,
+        .form-container1 input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Set a style for the submit/login button */
+        .form-container .btn,
+        .form-container1 .btn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* Add a red background color to the cancel button */
+        .form-container .cancel,
+        .form-container1 .cancel {
+            background-color: red;
+        }
+
+        /* Add some hover effects to buttons */
+        .form-container .btn:hover,
+        .open-button:hover,
+        .form-container1 .btn:hover,
+        .open-button1:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2>Menu</h2>
+        <div>
+            <!-- Trigger/Open The Modal -->
+            <button id="myBtn">Eat</button>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>pasta</p>
+                    <p>fries</p>
+                    <p>Pizzas</p>
+                    <p>Burgers</p>
+                </div>
+
+            </div>
+        </div>
+        <div>
+            <!-- Trigger/Open The Modal -->
+            <button id="myBtn1">drink</button>
+
+            <!-- The Modal -->
+            <div id="myModal1" class="modal1">
+
+                <!-- Modal content -->
+                <div class="modal-content1">
+                    <span class="close1">&times;</span>
+                    <p>soda</p>
+                    <p>soda</p>
+                    <p>soda</p>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <h1>Menu</h1>
+    <div class=row>
+        <div>
+            <button class="open-button" onclick="openForm()">eat</button>
+
+            <div class="form-popup" id="myForm">
+                <ul class="form-container">
+                    <li>dhgeyu</li>
+                    <li>dhgeyu</li>
+                    <li>dhgeyu</li>
+                    <li>dhgeyu</li>
+                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <button class="open-button1" onclick="openForm1()">drink</button>
+
+            <div class="form-popup1" id="myForm1">
+                <ul class="form-container1">
+
+                    <li>soda</li>
+                    <li>soda</li>
+                    <li>soda</li>
+                    <li>soda</li>
+                    <button type="button" class="btn cancel1" onclick="closeForm1()">Close</button>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        var modal1 = document.getElementById("myModal1");
+
+        // Get the button that opens the modal
+        var btn1 = document.getElementById("myBtn1");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close1")[0];
+
+        // When the user clicks the button, open the modal 
+        btn1.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

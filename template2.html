@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<head>
+    <style>
+        .jobTile {
+            max-width: 50%;
+            width: 100%;
+            height: 150px;
+            border: 1px;
+            display: inline-block;
+            vertical-align: top;
+            border-radius: 10px;
+            box-shadow: 5px;
+            background-color: rgb(223, 234, 198);
+            padding: 10px;
+            padding-bottom: 100px;
+            margin-top: 0;
+            margin-left: 21%;
+            margin-right: 0px;
+            margin-bottom: 20px;
+        }
+
+        .header {
+            margin-bottom: 0;
+            margin-left: 25%;
+            margin-left: 130px;
+            padding: 1px 16px;
+        }
+
+        ul {
+            list-style-type: none;
+            width: 100%;
+            background-color: #7b7878;
+            position: fixed;
+            overflow: hidden;
+            padding: 0;
+            margin-top: -10px;
+        }
+
+        ul li {
+            float: left;
+
+        }
+
+        ul li a {
+            color: white;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            padding: 14px 16px;
+        }
+
+        ul li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        ul li a.active {
+            background-color: #04AA6D;
+        }
+
+        .Vertical ul {
+            list-style-type: none;
+            padding: 0;
+            width: 20%;
+            background-color: rgb(223, 240, 240);
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+            margin-top: 3%;
+            text-align: left;
+        }
+
+        .Vertical li a {
+            display: block;
+            color: black;
+            padding: 8px 16px;
+            text-decoration: none;
+            width: 130px;
+            text-align: le;
+        }
+
+        .Vertical a.active {
+            background-color: rgb(223, 240, 240);
+            color: black;
+        }
+
+        .Vertical a:hover:not(.active) {
+            background-color: #555555;
+            color: white;
+            margin-right: 80px;
+        }
+
+        .pageNumbers {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .pageNumbers a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 3px;
+        }
+
+        .pageNumbers a.active {
+            background-color: #333333;
+            color: white;
+        }
+
+        footer {
+            background-color: #555555;
+            color: white;
+            padding: 25px;
+            margin-top: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#DineOuts">DineOut</a></li>
+        <li><a href="#OutLets">OutLets</a></li>
+        <li><a href="#Contact">Contact</a></li>
+        <li><a href="#About">About</a></li>
+    </ul>
+    <div class="Vertical">
+        <ul>
+            <li style="font-size: x-large;"><a class="active" href="#Menu"> Menu</a></li>
+            <li><a href="Starters">Starters</a></li>
+            <li><a href="Main Course">Main Course</a></li>
+            <li><a href="Desserts">Desserts</a></li>
+            <li><a href="Bevarages">Bevarages</a></li>
+        </ul>
+    </div>
+    <div class="header">
+        <h1 style="text-align: center;font-size: xx-large;margin-top: 8%;">Bawarchi Restaurant</h1>
+        <h2 id="categoryTitle" style="font-size: 2pc;margin-left: 10%;">Biryanis</h2>
+        <p style="margin-left: 10%;">Aromatic rice cooked with rich spices and your choice of ingredients</p>
+    </div>
+    <div id="demo"></div>
+
+    <div class="pageNumbers">
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">»</a>
+    </div>
+    <footer style="text-align: center;">
+        <h3>Bawarchi Restaurant</h3>
+        <p>Authentic taste of Hyderabad</p>
+        <p>Location: Hyderabad, Telangana</p>
+        <p>Biryanis | Starters | Main Course | Desserts</p>
+        <p>© 2026 Bawarchi Restaurant | All Rights Reserved</p>
+    </footer>
+    <script>
+        const menu = {
+
+            "Biryanis": [
+                {
+                    name: "Chicken Biryani",
+                    description: "Fragrant basmati rice cooked with tender chicken and authentic spices.",
+                    price: 250
+                },
+                {
+                    name: "Mutton Biryani",
+                    description: "Rich and flavorful mutton cooked with traditional spices.",
+                    price: 300
+                },
+                {
+                    name: "Egg Biryani",
+                    description: "Delicious basmati rice cooked with boiled eggs and aromatic spices.",
+                    price: 200
+                },
+                {
+                    name: "Veg Biryani",
+                    description: "A perfect blend of fresh vegetables and fragrant spices.",
+                    price: 180
+                }
+            ],
+
+
+
+        };
+
+
+        function showCategory(category) {
+
+            document.getElementById("categoryTitle").innerText = category;
+
+            let x = "";
+
+            for (let i = 0; i < menu[category].length; i++) {
+
+                x += '<div class="jobTile">';
+
+                x += '<h2>' + menu[category][i].name + '</h2>';
+
+                x += '<p>' + menu[category][i].description + '</p>';
+
+                x += '<h3>₹' + menu[category][i].price + '</h3>';
+
+                x += '<button>View Details</button>'
+
+                x += '</div>';
+            }
+
+            document.getElementById("demo").innerHTML = x;
+        }
+        showCategory("Biryanis");
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<head>
+    <style>
+        .jobTile {
+            width: 72%;
+            height: 84%;
+            display: inline-block;
+            vertical-align: top;
+            border-radius: 10px;
+            box-shadow: 5px;
+            background-color: rgb(218, 223, 224);
+            padding: 5%;
+            padding-bottom: 5%;
+            margin-left: 18%;
+            margin-right: -10%;
+            margin-bottom: 10%;
+            margin-top: -10px;
+        }
+
+        #demo {
+            margin-left: 5%;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(197, 189, 189);
+            position: fixed;
+            width: 10%;
+            height: 100%;
+            overflow: auto;
+            margin-top: -10px;
+        }
+
+        li a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding-left: 10px;
+            padding-bottom: 6%;
+            padding-top: 6%;
+
+        }
+
+        li a.active {
+            background-color: rgb(4, 133, 4);
+            color: white;
+            padding-left: 10px;
+        }
+
+        li a:hover:not(.active) {
+            background-color: rgb(64, 63, 63);
+            color: white;
+
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="active">Home</li>
+        <li><a href="#About">About</a></li>
+        <li><a href="#Contact Us">Contact Us</a></li>
+        <li><a href="#More">More</a></li>
+    </ul>
+    <div id="demo"></div>
+
+
+    </div>
+</body>
+<script>
+    let x = " ";
+    const myObj = {
+        name: "companies",
+        location: "India",
+        MncOpenings: [
+            {
+                name: "Cognizant",
+                jobNames: [
+                    "Cybersecurity Engineer - Threat Management", "Full Stack Java Developer", "Senior IAM Analyst", "senior-test-automation-engineer", "Java-microservices-developer"],
+                url: [
+                    "https://careers.cognizant.com/india-en/jobs/00070153281/cybersecurity-engineer-threat-management/", "https://careers.cognizant.com/india-en/jobs/00070337764/full-stack-java-developer/", "https://careers.cognizant.com/india-en/jobs/00070153191/senior-iam-analyst/", "https://careers.cognizant.com/india-en/jobs/00069456522/senior-test-automation-engineer/", "https://careers.cognizant.com/india-en/jobs/00070331642/java-microservices-developer/"
+                ]
+            },
+            {
+                name: "RealPage",
+                jobNames: ["Developr-2", "solutions-delivery-engineer", "senior-product-manager", "Hr-Business-Partner"],
+                url: ["https://careers-international-realpagepms.icims.com/jobs/14042/developer-ii/candidate?from=login&eem=SUkTkGAdBZDFNjdviNQIHkizisscj1pQf0Qj9p2rhtAnY30IrUt6G_FjjHcZ_XKB&code=856f263bcfa1307eb9624729be09d2a01a2d53d43f3c839d00e5f072e86a7415", "https://careers-realpagepms.icims.com/jobs/14485/solutions-delivery-engineer-%28remote%29/candidate?from=login&eem=qTQtyBTN7IkqrYnmk6sT7_7vvsZIoA91N1YqBRsejPHdNpP1OFhenRZVd3ETx9gj&code=172a91746571186e7c41411aba0e95b0b0ac42b2c432803409a78a89111b3ef3", "https://careers-realpagepms.icims.com/jobs/14325/senior-software-engineer-%28solutions%29---typescript-node.js-react/candidate?from=login&eem=u9br7aMxASCkOTjBfOHMjMzf91vmD5Wi19UEx5urkZxJ_pzweFLpfzgQWudv7kZa&code=90e88564f5e60ac54b054ca4cf6c7db033ca57e9da5f6046522da4d1b7f15d0e", "https://careers-realpagepms.icims.com/jobs/14320/developer-analyst-ii/candidate?from=login&eem=KkLidj-HFQ5xrZt45Mn67TnpKi9vkcieJAhh9jtEJn5c9fIwP1Ra_AVMmwVOxoZe&code=b5dfe22c4d5b9f7ff56fafa445326e73fcdabd43fded32a43eb6014d992abd2a", "https://careers-realpagepms.icims.com/jobs/14198/senior-product-manager/candidate?from=login&eem=WAKSP3IyY1V4_az9XwEGX8pnrswY_Ou7E-IcPh0yvetYHK7L4HcXhx1b8kbLyJqn&code=2c0229dd63fdea32192ffa80c3ac5b3ee1554920ea56302b817abed125eda88b"]
+            },
+            {
+                name: "HCL",
+                jobNames: ["Senior-Technical-Lead", "SeniorAnalyst-English", "Technical-Lead", "Azur-Data-Architect"],
+                url: ["https://careers.hcltech.com/job/Senior-Technical-Lead/66700-en_US", "https://careers.hcltech.com/job/SeniorAnalyst-English%2C-Latin%2C-Windows/90683-en_US", "https://careers.hcltech.com/job/Technical-Lead/148484-en_US", "https://careers.hcltech.com/job/Azure-Data-Architect/141151-en_US"]
+            },
+            {
+                name: "Accenture",
+                jobNames: ["Custom software Engineer", "Web developer", "Senior Analyst"],
+                url: ["https://www.accenture.com/in-en/careers/jobdetails?id=ATCI-5303096-S1993775_en&title=Custom+Software+Engineer", "https://www.accenture.com/in-en/careers/jobdetails?id=ATCI-5345511-S1994918_en&title=Web+Developer", "https://www.accenture.com/in-en/careers/jobdetails?id=14385008_en&title=Senior+Analyst+-+Content+Development"]
+            },
+            {
+                name: "NTT data",
+                jobNames: ["Dev-Ops", "Backend-MicroServicious-Java", "AI-Architeect", "Senior-MsEngineer-Network"],
+                url: ["https://careers.services.global.ntt/global/en/job/16cc202bdffed60/Dev-Ops", "https://careers.services.global.ntt/global/en/job/13eb0f1d5932900/Backend-Microservicios-Java", "https://careers.services.global.ntt/global/en/job/b03c4a96d31c700/AI-Architect", "https://careers.services.global.ntt/global/en/job/R-128662/Senior-MS-Engineer-Network"]
+            },
+            {
+                name: "Wipro",
+                jobNames: ["Solution-Architect", "Senior-Analyst", "SalesForce-Developer", "Exponential-Engineer-Head"],
+                url: ["https://careers.wipro.com/job/Solution-Architect-L2/133525-en_US", "https://careers.wipro.com/job/Senior-Analyst/109618-en_US", "https://careers.wipro.com/job/Salesforce-Developer/168566-en_US", "https://careers.wipro.com/job/Exponential-Engineering-Head/185842-en_US"]
+            },
+            {
+                name: "Delloite",
+                jobNames: ["Senior Consultant,Java Springboot Full Stack ", " Cyber - DPT ,Deputy Manager", "Team Lead,SAP Basis", "Senior Consultant,SAP OpenText"],
+                url: ["https://southasiacareers.deloitte.com/job/Bengaluru-Senior-Consultant-Java-Springboot-Full-Stack-Bengaluru-Engineering-Platform-Development-&-In/57741444/", "https://southasiacareers.deloitte.com/job/Bengaluru-T&T-Cyber-DPT-Deputy-Manager-Data-Privacy/58655744/", "https://southasiacareers.deloitte.com/job/Mumbai-Team-Lead-SAP-Basis-Mumbai-SAP-DSA-Emerging/58627044/", "https://southasiacareers.deloitte.com/job/Bengaluru-Senior-Consultant-SAP-OpenText-Bengaluru-SAP-DSA-CoE/57606344/"]
+            },
+            {
+                name: "CapGemini",
+                jobNames: ["Devops Engineer (GCP)", "Azure Databricks Engineer", "Cloud Security Consultant", "SAP Technical Consultant"],
+                url: ["https://www.capgemini.com/jobs/540007-en_GB+sap_btp", "https://www.capgemini.com/jobs/342347-en_GB+sap_btp", "https://www.capgemini.com/jobs/529724-en_GB+sap_btp", "https://www.capgemini.com/jobs/417771-en_US+sap_btp"]
+            },
+            {
+                name: "Virtusa",
+                jobNames: ["Lead Software Engineer", "Senior Consultant", "Architect (ATC)", "Associate Engineer-Technology"],
+                url: ["https://www.virtusa.com/careers/job-search/global/en/job/265362/Lead-Software-Engineer", "https://www.virtusa.com/careers/job-search/global/en/job/CREQ244383/Senior-Consultant", "https://www.virtusa.com/careers/job-search/global/en/job/CREQ245054/Architect-ATC", "https://www.virtusa.com/careers/job-search/global/en/job/243686/Associate-Engineer-Technology"]
+            }
+        ]
+    };
+
+
+    for (let i in myObj.MncOpenings) {
+        x += '<div class="jobTile">';
+        x += "<h2>" + myObj.MncOpenings[i].name + "</h2>";
+        for (let j = 0; j < myObj.MncOpenings[i].jobNames.length; j++) {
+            x += '<a href="' + myObj.MncOpenings[i].url[j] + '" target="_blank">' + '<button>' + myObj.MncOpenings[i].jobNames[j] + '</button>' + '</a><br><br>';
+
+        }
+        x += '</div>'
+    }
+    document.getElementById("demo").innerHTML = x;
+</script>
+
+</html>

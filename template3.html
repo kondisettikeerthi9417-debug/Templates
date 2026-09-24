@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .body {
+            background-color: rgb(225, 223, 223);
+        }
+
+        ul {
+            list-style-type: none;
+            margin-top: 0;
+            margin-left: -10px;
+            margin-right: -10px;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333333;
+            position: fixed;
+        }
+
+        ul li {
+            float: left;
+            font-family: 'Courier New', Courier, monospace;
+
+        }
+
+        ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            margin-right: 200px;
+        }
+
+        ul li a:hover {
+            background-color: rgb(248, 247, 246);
+            color: blue;
+        }
+
+        .fpic_styling {
+            position: absolute;
+            top: 50px;
+            left: 0px;
+            z-index: -1;
+            width: 100%;
+            height: 80%;
+        }
+
+        .header_pic {
+            margin-top: 30px;
+        }
+
+        .about_section {
+            margin-top: -5%;
+        }
+
+        .about_section h2 {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            text-align: center;
+            margin-block-start: 1.67em;
+            margin-block-end: 1.67em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            unicode-bidi: isolate;
+        }
+
+        .about_section p {
+            margin-block-start: 1.67em;
+            margin-block-end: 1.67em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            unicode-bidi: isolate;
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .quote {
+            margin-left: 20%;
+            margin-right: 18%;
+            margin-top: 2%;
+            font-size: large;
+            background-color: rgb(210, 244, 244);
+        }
+
+        #container {
+            margin-left: 20%;
+            margin-right: 20%;
+            max-width: 20%;
+        }
+
+        .container_info {
+            margin-left: 20%;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .menu_bar {
+            margin-left: 20%;
+            height: 40%;
+            margin-right: -9px;
+        }
+
+        .row {
+            display: flex;
+            gap: 20pxx;
+
+        }
+
+        .open-button,
+        .open-button1 {
+            background-color: #555;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            width: 370px;
+            height: 15%;
+            margin-top: 5%;
+            top: 0;
+        }
+
+        /* The popup form - hidden by default */
+        .form-popup,
+        .form-popup1 {
+            display: none;
+            width: 67%;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+            height: 10%;
+            margin-top: 10%;
+        }
+
+        /* Add styles to the form container */
+        .form-container,
+        .form-container1 {
+            max-width: 280px;
+            padding: 10px;
+            background-color: white;
+            margin-top: 10%;
+
+        }
+
+        /* Full-width input fields */
+        .form-container input[type=text],
+        .form-container input[type=password],
+        .form-container1 input[type=text],
+        .form-container1 input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        /* When the inputs get focus, do something */
+        .form-container input[type=text]:focus,
+        .form-container input[type=password]:focus,
+        .form-container1 input[type=text]:focus,
+        .form-container1 input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Set a style for the submit/login button */
+        .form-container .btn,
+        .form-container1 .btn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* Add a red background color to the cancel button */
+        .form-container .cancel,
+        .form-container1 .cancel {
+            background-color: red;
+        }
+
+        /* Add some hover effects to buttons */
+        .form-container .btn:hover,
+        .open-button:hover,
+        .form-container1 .btn:hover,
+        .open-button1:hover {
+            opacity: 1;
+        }
+
+        .tpic {
+            margin-left: 20%;
+            margin-right: 20%;
+            margin-top: 7%;
+        }
+
+        .maps1 {
+            margin-left: 20%;
+            margin-right: 18%;
+            background-color: black;
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+
+        .fourpic {
+            margin-left: 20%;
+            margin-right: 20%;
+            width: 62%;
+        }
+
+        .form {
+            margin-left: 20%;
+            width: 80%;
+        }
+
+        .footer {
+            background-color: rgb(224, 216, 216);
+            color: rgb(7, 5, 5);
+            padding: 25px;
+            margin-top: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li style="font-size: larger;flex: 1;"><a class="active" href="#home">Home</a></li>
+            <li style="font-size: larger;flex: 1;"><a href="Aboutt">About</a></li>
+            <li style="font-size: larger;flex: 1;"><a href="Menu">Menu</a></li>
+            <li style="font-size: larger;flex: 1;"><a href="Where">Where</a></li>
+
+        </ul>
+    </div>
+    <div class="header_pic">
+        <h1
+            style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: white;font-size: 60px;margin-left: 11%;">
+            <pre>
+            The 
+
+
+
+            Cafe
+            </pre>
+        </h1>
+        <section>
+            <img class="fpic_styling" src="fpic.jpeg">
+        </section>
+    </div>
+    <div class="about_section">
+        <h2>ABOUT THE CAFE</h2>
+        <p>The Cafe was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed
+            do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            In addition to our full espresso and brew bar menu, we serve fresh made-to-order breakfast and lunch
+            sandwiches, as well as a selection of sides and salads and other good stuff.</p>
+
+    </div>
+    <div class="quote">
+
+        <pre> <i>"Use products from nature for what it's worth - but never too early, nor too late."
+    
+                               Fresh is the new sweet.</i>
+
+                        Chef, Coffeeist and Owner: Liam Brown
+        </pre>
+    </div>
+    <div id="container"></div>
+    <section class="container_info">
+
+        <p><b>Opening hours: </b>Everyday from 6am to 5pm.</p>
+        <p><b>Address:</b> 15 Adr street, 5015, NY</p>
+    </section>
+    <div class="menu_bar">
+        <h1 style="text-align: 34%;">Menu</h1>
+        <div class=row>
+            <div>
+                <button class="open-button" onclick="openForm()">EAT</button>
+
+                <div class="form-popup" id="myForm">
+                    <dl class="form-container">
+                        <dt>Bread Basket</dt>
+                        <dd>-Assortment of fresh baked fruit breads and muffins 5.50</dd>
+                        <dt>Honey Almond Granola with Fruits</dt>
+                        <dd>-Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</dd>
+                        <dt>Belgian Waffle</dt>
+                        <dd>-Vanilla flavored batter with malted flour 7.50</dd>
+                        <dt>Scrambled Eggs</dt>
+                        <dd>
+                            -Scrambled eggs, roasted red pepper and garlic,
+                            with green onions 7.50
+                        </dd>
+                        <dt>Blueberry Pancakes</dt>
+                        <dd>
+                            -With syrup, butter and lots of berries 8.50
+                        </dd>
+                        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                    </dl>
+                </div>
+            </div>
+            <div>
+                <button class="open-button1" onclick="openForm1()">DRINK</button>
+
+                <div class="form-popup1" id="myForm1">
+                    <dl class="form-container1">
+                        <dt>Coffee</dt>
+                        <dd>-Regular coffee 2.50</dd>
+                        <dt>Chocolato</dt>
+                        <dd>
+                            -Chocolate espresso with milk 4.50
+                        </dd>
+                        <dt>Corretto</dt>
+                        <dd>
+                            -Whiskey and coffee 5.00
+                        </dd>
+                        <dt>Iced Tea</dt>
+                        <dd>
+                            -Hot tea, except not hot 3.00
+                        </dd>
+                        <dt>Soda</dt>
+                        <dd>
+                            -Coke, Sprite, Fanta, etc. 2.50
+                        </dd>
+
+                        <button type="button" class="btn cancel1" onclick="closeForm1()">Close</button>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="tpic.jpeg" class="tpic">
+    <section class="maps1">
+        <h3>WHERE TO FIND US</h3>
+    </section>
+    <p style="font-family: ' Inconsolata', sans-serif;margin-left: 20%;margin-top: 3%;">Find us at V.V Nagar in
+        Dilshuknagar</p>
+    <img src="map.jpg" class="fourpic">
+    <p style="margin-left: 20%;margin-right: 17%;font-family: Arial, Helvetica, sans-serif;"><span
+            style="background-color: black;color: white;">FYI! </span> We offer full-service catering for any event,
+        large or small.We understand your needs and will cater the food to satisfy both look and taste.</p>
+    <p style="margin-left: 20%;font-family:Arial, Helvetica, sans-serif ;"><b>Reserve</b> a table, ask for today's
+        special,or just send us a message:</p>
+    <form action="" class="form">
+        <p><input style="padding:16px; width: 60%;" type="text" id="Name" name="Name" placeholder="Name"></p>
+        <p><input style="padding: 16px; width: 60%;" type="text" id="persons" name="persons"
+                placeholder="How many people"></p>
+        <p><input style="padding: 16px; width: 60%;" type="date" id="date" name="date"
+                placeholder="dd/mm/yyyy  --:-- ----"></p>
+        <p><input style="padding: 16px;width: 60%;" type="text" id="username" name="username"
+                placeholder="Message/Special Requirements"></p>
+        <p><input style="padding: 16px; width: 20%; background-color: black;color: white;" type="submit"
+                value="Send message"></p>
+    </form>
+    <footer class="footer">
+        <p>Powered by</p>
+
+    </footer>
+    <script>
+        const result = document.getElementById("container");
+        const image = document.createElement("img");
+        image.src = "spic(1).jpeg";
+        result.appendChild(image);
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+        function openForm1() {
+            document.getElementById("myForm1").style.display = "block";
+        }
+
+        function closeForm1() {
+            document.getElementById("myForm1").style.display = "none";
+        }
+
+    </script>
+</body>
+
+</html>
