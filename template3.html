@@ -2,52 +2,26 @@
 <html>
 
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <style>
         .body {
             background-color: rgb(225, 223, 223);
         }
 
-        ul {
-            list-style-type: none;
-            margin-top: 0;
-            margin-left: -10px;
-            margin-right: -10px;
-            padding: 0;
-            overflow: hidden;
-            background-color: #333333;
-        }
-
-        ul li {
-            float: left;
-            font-family: 'Courier New', Courier, monospace;
-
-        }
-
-        ul li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            margin-right: 200px;
-        }
-
-        ul li a:hover {
-            background-color: rgb(248, 247, 246);
-            color: blue;
-        }
-
         .fpic_styling {
             position: absolute;
-            top: 50px;
+            top: 0px;
             left: 0px;
             z-index: -1;
-            width: 100%;
             height: 80%;
+            width: 100%;
         }
 
         .header_pic {
-            margin-top: 30px;
+            margin-top: 50px;
+            min-height: 600px;
+            position: relative;
         }
 
         .about_section {
@@ -70,8 +44,8 @@
             margin-inline-start: 0px;
             margin-inline-end: 0px;
             unicode-bidi: isolate;
-            margin-left: 20%;
-            margin-right: 20%;
+            margin-left: 18%;
+            margin-right: 15%;
         }
 
         .quote {
@@ -85,7 +59,11 @@
         #container {
             margin-left: 20%;
             margin-right: 20%;
-            max-width: 20%;
+
+        }
+
+        #container img {
+            max-width: 100%;
         }
 
         .container_info {
@@ -96,13 +74,7 @@
         .menu_bar {
             margin-left: 20%;
             height: 40%;
-            margin-right: -9px;
-        }
-
-        .row {
-            display: flex;
-            gap: 20pxx;
-
+            margin-right: 18%;
         }
 
         .open-button,
@@ -113,7 +85,7 @@
             border: none;
             cursor: pointer;
             opacity: 0.8;
-            width: 370px;
+            width: 100%;
             height: 15%;
             margin-top: 5%;
             top: 0;
@@ -123,7 +95,7 @@
         .form-popup,
         .form-popup1 {
             display: none;
-            width: 67%;
+            width: 100%;
             border: 3px solid #f1f1f1;
             z-index: 9;
             height: 10%;
@@ -192,10 +164,12 @@
             margin-left: 20%;
             margin-right: 20%;
             margin-top: 7%;
+            width: 60%;
         }
 
         .maps1 {
             margin-left: 20%;
+            margin-top: 2%;
             margin-right: 18%;
             background-color: black;
             color: white;
@@ -205,13 +179,13 @@
 
         .fourpic {
             margin-left: 20%;
-            margin-right: 20%;
+            margin-right: 18%;
             width: 62%;
         }
 
         .form {
             margin-left: 20%;
-            width: 80%;
+            width: 60%;
         }
 
         .footer {
@@ -225,31 +199,49 @@
 </head>
 
 <body>
-    <div>
-        <ul>
-            <li style="font-size: larger;flex: 1;"><a class="active" href="#home">Home</a></li>
-            <li style="font-size: larger;flex: 1;"><a href="Aboutt">About</a></li>
-            <li style="font-size: larger;flex: 1;"><a href="Menu">Menu</a></li>
-            <li style="font-size: larger;flex: 1;"><a href="Where">Where</a></li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
 
-        </ul>
-    </div>
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="#home">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Aboutt">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Menu">Menu</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Where">Where</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
     <div class="header_pic">
         <h1
             style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: white;font-size: 60px;margin-left: 11%;">
             <pre>
-            The 
+
+              The 
 
 
 
-            Cafe
+            
+              Cafe
             </pre>
         </h1>
         <section>
-            <img class="fpic_styling" src="fpic.jpeg">
+            <img class="fpic_styling img-fluid" src="fpic.jpeg">
         </section>
     </div>
-    <div class="about_section">
+    <div class="about_section container">
         <h2>ABOUT THE CAFE</h2>
         <p>The Cafe was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed
@@ -275,8 +267,8 @@
     </section>
     <div class="menu_bar">
         <h1 style="text-align: 34%;">Menu</h1>
-        <div class=row>
-            <div>
+        <div class="row mx-0">
+            <div class="col-6">
                 <button class="open-button" onclick="openForm()">EAT</button>
 
                 <div class="form-popup" id="myForm">
@@ -300,7 +292,7 @@
                     </dl>
                 </div>
             </div>
-            <div>
+            <div class="col -6">
                 <button class="open-button1" onclick="openForm1()">DRINK</button>
 
                 <div class="form-popup1" id="myForm1">
