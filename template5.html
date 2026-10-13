@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+        body {
+            background-color: #ededed;
+        }
+
+        #header .section {
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 150px;
+            background-color: #4da0a9;
+        }
+
+        #header .section ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+        }
+
+        #header .section ul li {
+            float: none;
+            border-right: 10px solid #4da0a9;
+        }
+
+        #header .section ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            white-space: nowrap;
+            letter-spacing: 0.05em;
+            background-color: #4a4444;
+        }
+
+        #header .section ul li a:hover {
+            background-color: #111111;
+        }
+
+        #header .section .logo img {
+            width: 350px;
+            height: 150px;
+            margin-top: 37px;
+        }
+
+        #header .article {
+            background: #fff;
+            border: 2px solid #5fb3bd;
+            border-radius: 4px;
+            margin: 7% 1% 5% 12%;
+            overflow: hidden;
+            padding: 0;
+            width: 73%;
+            display: block;
+        }
+
+        #header .article img {
+            display: block;
+            float: left;
+            margin: 0 50px 0 0;
+            width: 30%;
+            height: 80%;
+        }
+
+        #header .article h1 {
+            margin-top: 10%;
+            font-family: 'ChangaOne';
+            font-size: 40px;
+            font-weight: normal;
+        }
+
+        #body {
+            margin: 0 auto;
+            min-height: 812px;
+            padding: 20px 0 50px;
+            width: 960px;
+        }
+
+        #body>ul {
+            overflow: hidden;
+        }
+
+        #body>ul li {
+            float: left;
+            list-style: none;
+            padding: 2px;
+            width: 220px;
+        }
+
+        li {
+            display: list-item;
+            unicode-bidi: isolate;
+        }
+
+        #body>ul li>img {
+            border: 0;
+            display: block;
+            margin-bottom: 7%;
+            padding: 0;
+            border-color: #397fa3;
+            box-shadow: 0 12px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #body>div {
+            margin: 0;
+            overflow: hidden;
+            padding: 50px 0 0;
+        }
+
+        #body div .featured {
+            background: #fff;
+            border: 5px solid #5fb3bd;
+            border-radius: 4px;
+            min-height: 450px;
+            padding: 45px 15px 15px;
+            position: relative;
+            width: 420px;
+        }
+
+        #body div .featured h2 {
+            text-align: center;
+        }
+
+        #body h2 {
+            background: url(../images/bg-featured.png) repeat-x;
+            color: #fff;
+            font-family: 'Comfortaa-Regular';
+            font-size: 20px;
+            font-weight: normal;
+            height: 47px;
+            letter-spacing: 0.1em;
+            left: 15px;
+            line-height: 47px;
+            margin: 0;
+            padding: 0 25px;
+            position: absolute;
+            text-transform: capitalize;
+            top: -14px;
+        }
+
+        #body div .featured img {
+            display: block;
+            float: left;
+            margin: 10px 30px 25px 0;
+            padding: 0;
+        }
+
+        body div .featured h3 {
+            color: #354057;
+            font-size: 20px;
+            font-weight: normal;
+            margin: 0;
+            padding: 10px 0 0;
+        }
+
+        #body div .featured p {
+            clear: both;
+            color: black;
+        }
+
+        #body div .section {
+            width: 460px;
+        }
+
+        #body div div {
+            float: left;
+            margin: 0 10px;
+            padding: 0;
+        }
+
+        #body div .section .article {
+            height: 183px;
+            margin-bottom: 25px;
+            padding: 55px 15px 20px;
+            text-align: right;
+        }
+
+        #body div .section div {
+            background: #519194;
+            border: 5px solid #5fb3bd;
+            border-radius: 4px;
+            float: none;
+            margin: 0;
+            padding: 0 15px;
+            position: relative;
+        }
+
+        #body h2 {
+            background: url(../images/bg-featured.png) repeat-x;
+            color: #fff;
+            font-family: 'Comfortaa-Regular';
+            letter-spacing: 0.1em;
+            line-height: 47px;
+            margin: 0;
+            padding: 0 25px;
+            position: absolute;
+            text-transform: capitalize;
+            top: -14px;
+        }
+
+        #body div .section .newsletter {
+            height: 168px;
+            padding: 30px 15px 19px 214px;
+            position: relative;
+        }
+
+        #body div .section div {
+            background: #519194;
+            border: 5px solid #5fb3bd;
+            border-radius: 4px;
+            float: none;
+            margin: 0;
+            padding: 0 15px;
+            position: relative;
+        }
+
+        #body div .section .newsletter img {
+            display: block;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: -13px;
+            z-index: 5;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div class="section">
+            <div class="logo">
+                <img src="Index.jpg">
+            </div>
+            <ul>
+                <li class="selected"><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Hairstyles</a></li>
+                <li><a href="">New Arrivals</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </div>
+        <div class="article">
+            <img src="great-hairstyle.jpg">
+            <h1>Great hairstyles comes from the experts</h1>
+        </div>
+    </div>
+    <div id="body">
+        <ul>
+            <li><img src="hairstyle1.jpg"><b>Best hairstylists</b>
+                <p>
+                    Want an easier solution for a <a rel="nofollow"
+                        href="https://freewebsitetemplates.com/link/free-website/" data-ga-event="click"
+                        data-ga-category="Text Link" data-ga-action="Ad Click"
+                        data-ga-label="Previews - Free Website">Free Website</a>? Head straight to <a rel="nofollow"
+                        href="https://freewebsitetemplates.com/link/wix/" data-ga-event="click"
+                        data-ga-category="Text Link" data-ga-action="Ad Click" data-ga-label="Previews - Wix">Wix</a>
+                    and immediately start customizing your website!
+                    This is just a place holder, so you can see what the site would look like.
+                </p>
+            </li>
+            <li><img src="hairstyle2.jpg"><b>Featured hairstyle</b>
+                <p>
+                    <a rel="nofollow" href="https://freewebsitetemplates.com/link/wix/" data-ga-event="click"
+                        data-ga-category="Text Link" data-ga-action="Ad Click" data-ga-label="Previews - Wix">Wix</a> is
+                    an online website builder with a simple drag &amp;
+                    drop interface, meaning you do the work online and instantly publish to the web. Nothing to
+                    download, nothing to upload.
+                </p>
+            </li>
+            <li><img src="hairstyle3.jpg"><b>Hair Care</b>
+                <p>
+                    All <a rel="nofollow" href="https://freewebsitetemplates.com/link/wix/" data-ga-event="click"
+                        data-ga-category="Text Link" data-ga-action="Ad Click" data-ga-label="Previews - Wix">Wix</a>
+                    templates are fully customizable and free to use.
+                    Just pick one you like, click Edit, and enter the online editor. Change, add, and remove items
+                    as you like.
+                </p>
+            </li>
+            <li><img src="hairstyle4.jpg"><b>Hair care</b>
+                <p>
+                    All <a rel="nofollow" href="https://freewebsitetemplates.com/link/wix/" data-ga-event="click"
+                        data-ga-category="Text Link" data-ga-action="Ad Click" data-ga-label="Previews - Wix">Wix</a>
+                    templates are fully customizable and free to use.
+                    Just pick one you like, click Edit, and enter the online editor. Change, add, and remove items
+                    as you like.
+                </p>
+            </li>
+        </ul>
+        <div>
+            <div class="Featured">
+                <h2>Featured</h2><img src="featured.jpg">
+                <h3>I just meet you</h3>
+                <p>
+                    This website template has been designed by <a href="https://freewebsitetemplates.com/">Free Website
+                        Templates</a> for you, for free. You can replace all this text with your own text.
+                    You can remove any link to our website from this website template, you're free to use this website
+                    template without linking back to us.
+                    If you're having problems editing this website template, then don't hesitate to ask for help on the
+                    <a href="https://freewebsitetemplates.com/forums/">Forums</a>.
+                </p>
+                <p>
+                    Want an easier solution for a <a rel="nofollow"
+                        href="https://freewebsitetemplates.com/link/free-website/" data-ga-event="click"
+                        data-ga-category="Text Link" data-ga-action="Ad Click"
+                        data-ga-label="Previews - Free Website">Free Website</a>? Head straight to <a rel="nofollow"
+                        href="https://freewebsitetemplates.com/link/wix/" data-ga-event="click"
+                        data-ga-category="Text Link" data-ga-action="Ad Click" data-ga-label="Previews - Wix">Wix</a>
+                    and immediately start customizing your website!
+                    <a rel="nofollow" href="https://freewebsitetemplates.com/link/wix/" data-ga-event="click"
+                        data-ga-category="Text Link" data-ga-action="Ad Click" data-ga-label="Previews - Wix">Wix</a> is
+                    an online website builder with a simple drag &amp; drop interface, meaning you do the work online
+                    and instantly publish to the web. Nothing to download, nothing to upload.
+                </p>
+                <p>
+                    All <a rel="nofollow" href="https://freewebsitetemplates.com/link/wix/" data-ga-event="click"
+                        data-ga-category="Text Link" data-ga-action="Ad Click" data-ga-label="Previews - Wix">Wix</a>
+                    templates are fully customizable and free to use. Just pick one you like, click Edit, and enter the
+                    online editor. Change, add, and remove items as you like.
+                    <a rel="nofollow" href="https://freewebsitetemplates.com/link/wix/" data-ga-event="click"
+                        data-ga-category="Text Link" data-ga-action="Ad Click" data-ga-label="Previews - Wix">Wix</a>
+                    also offers a ton of free design elements right inside the editor, like images, icons, animation
+                    files, and interactive widgets. Publish your <a rel="nofollow"
+                        href="https://freewebsitetemplates.com/link/free-website/" data-ga-event="click"
+                        data-ga-category="Text Link" data-ga-action="Ad Click"
+                        data-ga-label="Previews - Free Website">Free Website</a> in minutes!
+                </p>
+            </div>
+            <div class="section">
+                <div class="article">
+                    <h2>Hair style</h2>
+                    <p>
+                        This website template has been designed by <a href="https://freewebsitetemplates.com/">Free
+                            Website Templates</a> for you, for free. You can replace all this text with your own text.
+                        You can remove any link to our website from this website template, you're free to use this
+                        website template without linking back to us.
+                        If you're having problems editing this website template, then don't hesitate to ask for help on
+                        the <a href="https://freewebsitetemplates.com/forums/">Forums</a>.
+                    </p>
+                </div>
+                <div class="newsletter"><img src="skinhead.png">
+                    <p>
+                        Are you losing your hair? Let us help you in bringing back your confidence. <span>Call Us at
+                            1800-0000-0000</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
